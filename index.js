@@ -38,8 +38,15 @@ async function run() {
     app.get("/services/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
-      const result = await servicesCollection.findOne(query)
-      res.send(result)
+      const result = await servicesCollection.findOne(query);
+      res.send(result);
+      console.log(id);
+    });
+    app.get("/booking/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await servicesCollection.findOne(query);
+      res.send(result);
       console.log(id);
     });
   } finally {
